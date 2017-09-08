@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
@@ -25,6 +26,11 @@ public class SignUpStep2Activity extends AppCompatActivity {
             R.id.ckbSwimming, R.id.ckbVolleyball, R.id.ckbBasketball})
     List<CheckBox> allChecksSport;
 
+    @BindString(R.string.ckb_value_title)
+    String ckbValueTitle;
+
+    final int multiConst = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,12 +43,12 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
     private void initViews() {
         // Set default value
-        txtSalary.setText(getResources().getString(R.string.ckb_value_title, 0));
+        txtSalary.setText(String.format(ckbValueTitle, 0));
 
         seekBarSalary.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                String result = getResources().getString(R.string.ckb_value_title, progress);
+                String result = String.format(ckbValueTitle, progress * 100);
                 txtSalary.setText(result);
             }
 
