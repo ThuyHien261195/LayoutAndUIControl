@@ -2,8 +2,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="margin_30">30dp</dimen>
-    <dimen name="margin_15">15dp</dimen>
-    <dimen name="margin_10">10dp</dimen>
-    <dimen name="margin_5">5dp</dimen>
+    <dimen name="spacing_right_radio_btn">30dp</dimen>
+    <dimen name="spacing_vertical">15dp</dimen>
+    <dimen name="spacing_seek_bar_title">10dp</dimen>
 </resources>

@@ -7,9 +7,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import java.util.List;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -38,6 +39,9 @@ public class SignUpStep2Activity extends AppCompatActivity {
     @BindView(R.id.ckbBasketball)
     CheckBox ckbBasketball;
 
+    @BindViews({R.id.ckbBasketball, R.id.ckbFootball, R.id.ckbTennis})
+    List<CheckBox> allCkbs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +49,19 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        initViews();
+
+
+    }
+
+    private void initViews() {
         // Set default value
-        txtSalary.setText(getResources().getString(R.string.your_salary, 0));
+        txtSalary.setText(getResources().getString(R.string.ckb_value_title, 0));
 
         seekBarSalary.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                String result = getResources().getString(R.string.your_salary, progress);
+                String result = getResources().getString(R.string.ckb_value_title, progress);
                 txtSalary.setText(result);
             }
 

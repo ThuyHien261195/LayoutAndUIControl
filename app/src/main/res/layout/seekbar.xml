@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <android.support.v7.widget.AppCompatSeekBar
         android:id="@+id/seekBarSalary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginTop="@dimen/spacing_vertical"
         android:max="100000" />
 
     <LinearLayout
@@ -19,16 +17,16 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin_10"
-            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginLeft="@dimen/spacing_seek_bar_title"
+            android:layout_marginTop="@dimen/spacing_seek_bar_title"
             android:layout_weight="1"
-            android:text="@string/fromDollar" />
+            android:text="@string/ckb_start_value" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginRight="@dimen/margin_10"
-            android:layout_marginTop="@dimen/margin_10"
-            android:text="@string/toDollar" />
+            android:layout_marginRight="@dimen/spacing_seek_bar_title"
+            android:layout_marginTop="@dimen/spacing_seek_bar_title"
+            android:text="@string/ckb_end_value" />
     </LinearLayout>
-</LinearLayout>
+</merge>

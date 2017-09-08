@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpStep2Activity"
-            android:label="@string/sign_up_2"></activity>
+            android:label="@string/label_activity_sign_up"></activity>
     </application>
 
 </manifest>

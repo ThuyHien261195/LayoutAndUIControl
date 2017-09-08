@@ -15,50 +15,50 @@
         android:id="@+id/txtSalary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/your_salary" />
+        android:text="@string/ckb_value_title" />
 
     <include layout="@layout/seekbar" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_15"
-        android:text="@string/sport_like" />
+        android:layout_marginTop="@dimen/spacing_vertical"
+        android:text="@string/sport_title" />
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_15"
+        android:layout_marginTop="@dimen/spacing_vertical"
         android:stretchColumns="*">
 
         <TableRow>
 
             <CheckBox
                 android:id="@+id/ckbFootball"
-                android:text="@string/football" />
+                android:text="@string/ckb_football_title" />
 
             <CheckBox
                 android:id="@+id/ckbTennis"
-                android:text="@string/tennis" />
+                android:text="@string/clb_tennis_title" />
 
             <CheckBox
                 android:id="@+id/ckbPingPong"
-                android:text="@string/ping_pong" />
+                android:text="@string/ckb_ping_pong_title" />
         </TableRow>
 
-        <TableRow android:layout_marginTop="@dimen/margin_15">
+        <TableRow android:layout_marginTop="@dimen/spacing_vertical">
 
             <CheckBox
                 android:id="@+id/ckbSwimming"
-                android:text="@string/swimming" />
+                android:text="@string/ckb_swimming_title" />
 
             <CheckBox
                 android:id="@+id/ckbVolleyball"
-                android:text="@string/volleyball" />
+                android:text="@string/ckb_volleyball_title" />
 
             <CheckBox
                 android:id="@+id/ckbBasketball"
-                android:text="@string/basketball" />
+                android:text="@string/ckb_basketball_title" />
         </TableRow>
     </TableLayout>
 
@@ -67,8 +67,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margin_15"
-        android:background="@color/nextBtnColor"
-        android:text="@string/done"
-        android:textColor="@color/textNextBtnColor" />
+        android:layout_marginTop="@dimen/spacing_vertical"
+        android:background="@color/next_button_bg"
+        android:text="@string/action_done"
+        android:textColor="@color/next_button_text_color" />
 </LinearLayout>
