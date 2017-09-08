@@ -29,8 +29,22 @@ public class SignUpStep1Activity extends AppCompatActivity {
     @BindString(R.string.error_empty_field)
     String errorEmptyField;
 
+    @BindString(R.string.error_invalid_field)
+    String errorInvalidField;
+
+    @BindString(R.string.hint_first_name)
+    String hintFirstName;
+
+    @BindString(R.string.hint_last_name)
+    String hintLastName;
+
+    @BindString(R.string.hint_email)
+    String hintEmail;
+
     @BindString(R.string.hint_phone_number)
-    String fieldNamePhone;
+    String hintPhoneNumber;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +59,15 @@ public class SignUpStep1Activity extends AppCompatActivity {
         validateEmail();
     }
 
-    private void validateEmail() {
+    private boolean validateEmail() {
         if (TextUtils.isEmpty(editEmail.getText())) {
-            editEmail.setError(getResources().getString(R.string.error_empty_field,
-                    getResources().getString(R.string.hint_email)));
+            editEmail.setError(String.format(errorEmptyField, hintEmail));
+            return false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(editEmail.getText()).matches()) {
-            editEmail.setError(getResources().getString(R.string.error_invalid_field,
-                    getResources().getString(R.string.hint_email)));
+            editEmail.setError(String.format(errorInvalidField, hintEmail));
+            return false;
         }
+        return true;
     }
 
     @OnTextChanged(R.id.editPhone)
@@ -60,13 +75,15 @@ public class SignUpStep1Activity extends AppCompatActivity {
         validatePhone();
     }
 
-    private void validatePhone() {
+    private boolean validatePhone() {
         if (TextUtils.isEmpty(editPhone.getText())) {
-            editPhone.setError(String.format(errorEmptyField, fieldNamePhone));
+            editPhone.setError(String.format(errorEmptyField, hintPhoneNumber));
+            return false;
         } else if (!Patterns.PHONE.matcher(editPhone.getText()).matches()) {
-            editPhone.setError(getResources().getString(R.string.error_invalid_field,
-                    getResources().getString(R.string.hint_phone_number)));
+            editPhone.setError(String.format(errorInvalidField, hintPhoneNumber));
+            return false;
         }
+        return true;
     }
 
     @OnClick(R.id.btnNext)
@@ -76,27 +93,32 @@ public class SignUpStep1Activity extends AppCompatActivity {
             startActivity(intent);
             this.finish();
         } else {
-            if (TextUtils.isEmpty(editFirstName.getText())) {
-                editFirstName.setError(getResources().getString(R.string.error_empty_field,
-                        getResources().getString(R.string.hint_first_name)));
-            }
-
-            if (TextUtils.isEmpty(editLastName.getText())) {
-                editLastName.setError(getResources().getString(R.string.error_empty_field,
-                        getResources().getString(R.string.hint_last_name)));
-            }
-
+            validateFirstName();
+            validateLastName();
             validateEmail();
             validatePhone();
         }
     }
 
+    private boolean validateFirstName() {
+        if (TextUtils.isEmpty(editFirstName.getText())) {
+            editFirstName.setError(String.format(errorEmptyField, hintFirstName));
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validateLastName() {
+        if (TextUtils.isEmpty(editLastName.getText())) {
+            editLastName.setError(String.format(errorEmptyField, hintLastName));
+            return false;
+        }
+        return true;
+    }
+
     public boolean checkValidInput() {
-        return !TextUtils.isEmpty(editFirstName.getText()) &&
-                !TextUtils.isEmpty(editLastName.getText()) &&
-                !TextUtils.isEmpty(editEmail.getText()) &&
-                !TextUtils.isEmpty(editPhone.getText()) &&
-                Patterns.EMAIL_ADDRESS.matcher(editEmail.getText()).matches() &&
-                Patterns.PHONE.matcher(editPhone.getText()).matches();
+        return validateFirstName() && validateLastName() &&
+                validateEmail() && validatePhone();
+
     }
 }
