@@ -48,14 +48,13 @@
         android:inputType="phone" />
 
     <RadioGroup
-        android:layout_marginTop="@dimen/spacing_vertical"
-        android:checkedButton="@+id/optionFemale"
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/spacing_vertical"
+        android:checkedButton="@+id/optionFemale"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatRadioButton
             android:id="@+id/optionMale"

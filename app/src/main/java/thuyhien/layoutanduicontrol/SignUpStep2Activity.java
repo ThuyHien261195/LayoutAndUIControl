@@ -29,7 +29,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
     @BindString(R.string.ckb_value_title)
     String ckbValueTitle;
 
-    final int multiConst = 10;
+    final int multiConst = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
         seekBarSalary.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                String result = String.format(ckbValueTitle, progress * 100);
+                String result = String.format(ckbValueTitle, progress * multiConst);
                 txtSalary.setText(result);
             }
 
@@ -67,8 +67,8 @@ public class SignUpStep2Activity extends AppCompatActivity {
     @OnClick(R.id.btnDone)
     public void onClickBtnDone() {
         for (CheckBox checkItem :
-             allChecksSport) {
-            if(checkItem.isChecked()){
+                allChecksSport) {
+            if (checkItem.isChecked()) {
                 this.finish();
                 return;
             }

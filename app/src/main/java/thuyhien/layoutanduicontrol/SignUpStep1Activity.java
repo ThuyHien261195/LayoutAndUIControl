@@ -45,7 +45,6 @@ public class SignUpStep1Activity extends AppCompatActivity {
     String hintPhoneNumber;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
