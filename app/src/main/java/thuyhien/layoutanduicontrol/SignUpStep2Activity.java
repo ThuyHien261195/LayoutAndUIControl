@@ -21,26 +21,9 @@ public class SignUpStep2Activity extends AppCompatActivity {
     @BindView(R.id.seekBarSalary)
     SeekBar seekBarSalary;
 
-    @BindView(R.id.ckbFootball)
-    CheckBox ckbFootball;
-
-    @BindView(R.id.ckbTennis)
-    CheckBox ckbTennis;
-
-    @BindView(R.id.ckbPingPong)
-    CheckBox ckbPingPong;
-
-    @BindView(R.id.ckbSwimming)
-    CheckBox ckbSwimming;
-
-    @BindView(R.id.ckbVolleyball)
-    CheckBox ckbVolleyball;
-
-    @BindView(R.id.ckbBasketball)
-    CheckBox ckbBasketball;
-
-    @BindViews({R.id.ckbBasketball, R.id.ckbFootball, R.id.ckbTennis})
-    List<CheckBox> allCkbs;
+    @BindViews({R.id.ckbFootball, R.id.ckbTennis, R.id.ckbPingPong,
+            R.id.ckbSwimming, R.id.ckbVolleyball, R.id.ckbBasketball})
+    List<CheckBox> allChecksSport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +33,6 @@ public class SignUpStep2Activity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         initViews();
-
-
     }
 
     private void initViews() {
@@ -79,12 +60,14 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
     @OnClick(R.id.btnDone)
     public void onClickBtnDone() {
-        if (!ckbFootball.isChecked() && !ckbTennis.isChecked() && !ckbPingPong.isChecked() &&
-                !ckbSwimming.isChecked() && !ckbVolleyball.isChecked() && !ckbBasketball.isChecked()) {
-            Toast.makeText(this, getResources().getString(R.string.warning_select_sport),
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            this.finish();
+        for (CheckBox checkItem :
+             allChecksSport) {
+            if(checkItem.isChecked()){
+                this.finish();
+                return;
+            }
         }
+        Toast.makeText(this, getResources().getString(R.string.warning_select_sport),
+                Toast.LENGTH_SHORT).show();
     }
 }
