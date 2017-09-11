@@ -15,10 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SignUpStep2Activity"
-            android:label="@string/label_activity_sign_up" />
-        <activity android:name=".SignUpStep3Activity"></activity>
+        <activity android:name=".SignUpStep2Activity"
+            android:label="@string/label_activity_sign_up"></activity>
     </application>
 
 </manifest>

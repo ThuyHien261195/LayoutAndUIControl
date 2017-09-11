@@ -22,11 +22,4 @@
     <string name="error_empty_field">You must enter %1$s</string>
     <string name="error_invalid_field">%1$s is invalid</string>
     <string name="warning_select_sport">Please select one sport at least</string>
-    <string name="asking_send_mail_title">Thank you for filling information.
-        \n What do you want to do next?</string>
-    <string name="action_send_mail">Send mail</string>
-    <string name="action_restart">Restart</string>
-    <string name="sign_up_subject_mail">User\'s registration info</string>
-    <string name="dollars_title">dollars</string>
-    <string name="intent_chooser_title">Send mail:</string>
 </resources>

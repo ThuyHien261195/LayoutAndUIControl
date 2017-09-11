@@ -64,6 +64,11 @@
 
     <Button
         android:id="@+id/btn_done"
-        style="@style/CommonButtonTheme"
-        android:text="@string/action_done" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/spacing_vertical"
+        android:background="@color/next_button_bg"
+        android:text="@string/action_done"
+        android:textColor="@color/next_button_text_color" />
 </LinearLayout>
