@@ -1,5 +1,6 @@
 package thuyhien.layoutanduicontrol;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,8 @@ public class SignUpStep2Activity extends AppCompatActivity {
     @BindString(R.string.ckb_value_title)
     String ckbValueTitle;
 
+    Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +40,12 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        getInfoBundle();
         initViews();
+    }
+
+    private void getInfoBundle() {
+        bundle = getIntent().getExtras();
     }
 
     private void initViews() {
@@ -75,11 +83,21 @@ public class SignUpStep2Activity extends AppCompatActivity {
         for (CheckBox checkItem :
                 allChecksSport) {
             if (checkItem.isChecked()) {
-                this.finish();
+                Intent intent = new Intent(this, SignUpStep3Activity.class);
+                createInfoBundle();
+                intent.putExtras(bundle);
+                startActivity(intent);
                 return;
             }
         }
         Toast.makeText(this, getResources().getString(R.string.warning_select_sport),
                 Toast.LENGTH_SHORT).show();
+    }
+
+    private void createInfoBundle() {
+        if (bundle == null) {
+            bundle = new Bundle();
+        }
+        bundle.putString("salary", String.valueOf(seekBarSalary.getProgress()));
     }
 }
