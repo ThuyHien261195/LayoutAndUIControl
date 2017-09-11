@@ -24,8 +24,8 @@ public class CustomSeekBar extends AppCompatSeekBar {
         super(context, attrs, defStyleAttr);
     }
 
-    public void configSeekBar(int max, int multiplier){
-        setMax(max/multiplier);
+    public void configSeekBar(int max, int multiplier) {
+        setMax(max / multiplier);
         MULTIPLIER = multiplier;
     }
 
