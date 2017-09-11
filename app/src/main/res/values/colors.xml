@@ -3,6 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="next_button_bg">#FF4081</color>
-    <color name="next_button_text_color">#FFFFFF</color>
+    <color name="common_button_bg">#FF4081</color>
+    <color name="common_button_text_color">#FFFFFF</color>
 </resources>
