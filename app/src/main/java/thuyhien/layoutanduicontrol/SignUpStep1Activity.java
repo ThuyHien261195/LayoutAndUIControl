@@ -89,8 +89,8 @@ public class SignUpStep1Activity extends AppCompatActivity {
     public void onClickBtnNext() {
         if (checkValidInput()) {
             Intent intent = new Intent(getBaseContext(), SignUpStep2Activity.class);
-            intent.putExtras(createInfoBundle());
             startActivity(intent);
+            this.finish();
         } else {
             validateFirstName();
             validateLastName();
@@ -119,14 +119,5 @@ public class SignUpStep1Activity extends AppCompatActivity {
         return validateFirstName() && validateLastName() &&
                 validateEmail() && validatePhone();
 
-    }
-
-    private Bundle createInfoBundle() {
-        Bundle bundle = new Bundle();
-        bundle.putString("firstName", editFirstName.getText().toString());
-        bundle.putString("lastName", editLastName.getText().toString());
-        bundle.putString("email", editEmail.getText().toString());
-        bundle.putString("phoneNumber", editPhone.getText().toString());
-        return bundle;
     }
 }
