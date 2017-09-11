@@ -5,4 +5,5 @@
     <dimen name="spacing_right_radio_btn">30dp</dimen>
     <dimen name="spacing_vertical">15dp</dimen>
     <dimen name="spacing_seek_bar_title">10dp</dimen>
+    <dimen name="margin_top_btn_next">30dp</dimen>
 </resources>

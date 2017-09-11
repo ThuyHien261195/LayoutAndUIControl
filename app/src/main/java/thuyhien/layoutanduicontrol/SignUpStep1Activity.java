@@ -14,16 +14,16 @@ import butterknife.OnClick;
 import butterknife.OnTextChanged;
 
 public class SignUpStep1Activity extends AppCompatActivity {
-    @BindView(R.id.editFirstName)
+    @BindView(R.id.edit_first_name)
     EditText editFirstName;
 
-    @BindView(R.id.editLastName)
+    @BindView(R.id.edit_last_name)
     EditText editLastName;
 
-    @BindView(R.id.editEmail)
+    @BindView(R.id.edit_email)
     EditText editEmail;
 
-    @BindView(R.id.editPhone)
+    @BindView(R.id.edit_phone)
     EditText editPhone;
 
     @BindString(R.string.error_empty_field)
@@ -53,7 +53,7 @@ public class SignUpStep1Activity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnTextChanged(R.id.editEmail)
+    @OnTextChanged(R.id.edit_email)
     public void onEmailChange(CharSequence cs, int start, int count, int after) {
         validateEmail();
     }
@@ -69,7 +69,7 @@ public class SignUpStep1Activity extends AppCompatActivity {
         return true;
     }
 
-    @OnTextChanged(R.id.editPhone)
+    @OnTextChanged(R.id.edit_phone)
     public void onPhoneChange(CharSequence cs, int start, int count, int after) {
         validatePhone();
     }
@@ -85,7 +85,7 @@ public class SignUpStep1Activity extends AppCompatActivity {
         return true;
     }
 
-    @OnClick(R.id.btnNext)
+    @OnClick(R.id.btn_next)
     public void onClickBtnNext() {
         if (checkValidInput()) {
             Intent intent = new Intent(getBaseContext(), SignUpStep2Activity.class);

@@ -17,14 +17,14 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editFirstName"
+            android:id="@+id/edit_first_name"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:hint="@string/hint_first_name" />
 
         <EditText
-            android:id="@+id/editLastName"
+            android:id="@+id/edit_last_name"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/edit_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_vertical"
@@ -40,7 +40,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editPhone"
+        android:id="@+id/edit_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_vertical"
@@ -48,34 +48,34 @@
         android:inputType="phone" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_vertical"
-        android:checkedButton="@+id/optionFemale"
+        android:checkedButton="@+id/option_female"
         android:gravity="center"
         android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatRadioButton
-            android:id="@+id/optionMale"
+            android:id="@+id/option_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/spacing_right_radio_btn"
             android:text="@string/radio_male_title" />
 
         <android.support.v7.widget.AppCompatRadioButton
-            android:id="@+id/optionFemale"
+            android:id="@+id/option_female"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/radio_female_title" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/spacing_right_radio_btn"
+        android:layout_marginTop="@dimen/margin_top_btn_next"
         android:background="@color/next_button_bg"
         android:text="@string/action_next"
         android:textColor="@color/next_button_text_color" />

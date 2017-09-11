@@ -16,20 +16,20 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SignUpStep2Activity extends AppCompatActivity {
-    @BindView(R.id.txtSalary)
+    @BindView(R.id.txt_salary)
     TextView txtSalary;
 
     @BindView(R.id.seekBarSalary)
     SeekBar seekBarSalary;
 
-    @BindViews({R.id.ckbFootball, R.id.ckbTennis, R.id.ckbPingPong,
-            R.id.ckbSwimming, R.id.ckbVolleyball, R.id.ckbBasketball})
+    @BindViews({R.id.ckb_football, R.id.ckb_tennis, R.id.ckb_ping_pong,
+            R.id.ckb_swimming, R.id.ckb_volleyball, R.id.ckb_basketball})
     List<CheckBox> allChecksSport;
 
     @BindString(R.string.ckb_value_title)
     String ckbValueTitle;
 
-    final int multiConst = 100;
+    final int multiConst = 50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
     private void initViews() {
         // Set default value
         txtSalary.setText(String.format(ckbValueTitle, 0));
-
+        seekBarSalary.setMax(100000/multiConst);
         seekBarSalary.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -64,7 +64,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
         });
     }
 
-    @OnClick(R.id.btnDone)
+    @OnClick(R.id.btn_done)
     public void onClickBtnDone() {
         for (CheckBox checkItem :
                 allChecksSport) {

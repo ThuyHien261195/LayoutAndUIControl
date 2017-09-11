@@ -12,7 +12,7 @@
     tools:context="thuyhien.layoutanduicontrol.SignUpStep2Activity">
 
     <TextView
-        android:id="@+id/txtSalary"
+        android:id="@+id/txt_salary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ckb_value_title" />
@@ -34,36 +34,36 @@
         <TableRow>
 
             <CheckBox
-                android:id="@+id/ckbFootball"
+                android:id="@+id/ckb_football"
                 android:text="@string/ckb_football_title" />
 
             <CheckBox
-                android:id="@+id/ckbTennis"
+                android:id="@+id/ckb_tennis"
                 android:text="@string/clb_tennis_title" />
 
             <CheckBox
-                android:id="@+id/ckbPingPong"
+                android:id="@+id/ckb_ping_pong"
                 android:text="@string/ckb_ping_pong_title" />
         </TableRow>
 
         <TableRow android:layout_marginTop="@dimen/spacing_vertical">
 
             <CheckBox
-                android:id="@+id/ckbSwimming"
+                android:id="@+id/ckb_swimming"
                 android:text="@string/ckb_swimming_title" />
 
             <CheckBox
-                android:id="@+id/ckbVolleyball"
+                android:id="@+id/ckb_volleyball"
                 android:text="@string/ckb_volleyball_title" />
 
             <CheckBox
-                android:id="@+id/ckbBasketball"
+                android:id="@+id/ckb_basketball"
                 android:text="@string/ckb_basketball_title" />
         </TableRow>
     </TableLayout>
 
     <Button
-        android:id="@+id/btnDone"
+        android:id="@+id/btn_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
