@@ -87,16 +87,16 @@ public class SignUpStep1Activity extends AppCompatActivity {
 
     @OnClick(R.id.btn_next)
     public void onClickBtnNext() {
-        if (checkValidInput()) {
+//        if (checkValidInput()) {
             Intent intent = new Intent(getBaseContext(), SignUpStep2Activity.class);
             startActivity(intent);
             this.finish();
-        } else {
-            validateFirstName();
-            validateLastName();
-            validateEmail();
-            validatePhone();
-        }
+//        } else {
+//            validateFirstName();
+//            validateLastName();
+//            validateEmail();
+//            validatePhone();
+//        }
     }
 
     private boolean validateFirstName() {

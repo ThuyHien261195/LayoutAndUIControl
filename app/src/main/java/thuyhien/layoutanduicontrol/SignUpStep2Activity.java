@@ -2,6 +2,7 @@ package thuyhien.layoutanduicontrol;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -20,7 +21,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
     TextView txtSalary;
 
     @BindView(R.id.seekBarSalary)
-    SeekBar seekBarSalary;
+    CustomSeekBar seekBarSalary;
 
     @BindViews({R.id.ckb_football, R.id.ckb_tennis, R.id.ckb_ping_pong,
             R.id.ckb_swimming, R.id.ckb_volleyball, R.id.ckb_basketball})
@@ -28,8 +29,6 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
     @BindString(R.string.ckb_value_title)
     String ckbValueTitle;
-
-    final int multiConst = 50;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +43,12 @@ public class SignUpStep2Activity extends AppCompatActivity {
     private void initViews() {
         // Set default value
         txtSalary.setText(String.format(ckbValueTitle, 0));
-        seekBarSalary.setMax(100000/multiConst);
+
+        seekBarSalary.configSeekBar(100000, 100);
         seekBarSalary.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                String result = String.format(ckbValueTitle, progress * multiConst);
+                String result = String.format(ckbValueTitle, progress);
                 txtSalary.setText(result);
             }
 
@@ -62,6 +62,8 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
     @OnClick(R.id.btn_done)
