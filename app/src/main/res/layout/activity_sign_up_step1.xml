@@ -72,11 +72,7 @@
 
     <Button
         android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        style="@style/CommonButtonTheme"
         android:layout_marginTop="@dimen/margin_top_btn_next"
-        android:background="@color/next_button_bg"
-        android:text="@string/action_next"
-        android:textColor="@color/next_button_text_color" />
+        android:text="@string/action_next" />
 </LinearLayout>

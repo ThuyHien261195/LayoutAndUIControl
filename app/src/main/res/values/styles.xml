@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Common action button theme -->
+    <style name="CommonButtonTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/common_button_bg</item>
+        <item name="android:textColor">@color/common_button_text_color</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/spacing_vertical</item>
+    </style>
+
 </resources>
