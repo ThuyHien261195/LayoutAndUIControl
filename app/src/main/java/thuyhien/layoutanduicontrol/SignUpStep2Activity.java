@@ -66,6 +66,10 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
     @OnClick(R.id.btn_done)
     public void onClickBtnDone() {
+        checkValidInput();
+    }
+
+    private void checkValidInput() {
         for (CheckBox checkItem :
                 allChecksSport) {
             if (checkItem.isChecked()) {
