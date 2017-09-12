@@ -29,4 +29,5 @@
     <string name="sign_up_subject_mail">User\'s registration info</string>
     <string name="dollars_title">dollars</string>
     <string name="intent_chooser_title">Send mail:</string>
+    <string name="label_activity_sign_up_confirm">Step 3</string>
 </resources>
