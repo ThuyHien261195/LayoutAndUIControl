@@ -8,9 +8,9 @@
     <string name="radio_male_title">Male</string>
     <string name="radio_female_title">Female</string>
     <string name="action_next">Next</string>
-    <string name="ckb_value_title">Your salary: %1$d dollars</string>
-    <string name="ckb_start_value">$0</string>
-    <string name="ckb_end_value">$100000</string>
+    <string name="seek_bar_value_title">Your salary: %1$d dollars</string>
+    <string name="seek_bar_start_value">$0</string>
+    <string name="seek_bar_end_value">$%1$d</string>
     <string name="sport_title">Which sport do you like?</string>
     <string name="ckb_football_title">Football</string>
     <string name="clb_tennis_title">Tennis</string>

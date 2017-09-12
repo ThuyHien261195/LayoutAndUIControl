@@ -3,7 +3,6 @@ package thuyhien.layoutanduicontrol;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.CheckBox;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -18,8 +17,12 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SignUpStep2Activity extends AppCompatActivity {
+
     @BindView(R.id.txt_salary)
     TextView txtSalary;
+
+    @BindView(R.id.txt_end_dollar)
+    TextView txtEndDollar;
 
     @BindView(R.id.seekBarSalary)
     CustomSeekBar seekBarSalary;
@@ -28,10 +31,10 @@ public class SignUpStep2Activity extends AppCompatActivity {
             R.id.ckb_swimming, R.id.ckb_volleyball, R.id.ckb_basketball})
     List<CheckBox> allChecksSport;
 
-    @BindString(R.string.ckb_value_title)
+    @BindString(R.string.seek_bar_value_title)
     String ckbValueTitle;
 
-    Bundle bundle;
+    Bundle bundleRegistrationInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +48,14 @@ public class SignUpStep2Activity extends AppCompatActivity {
     }
 
     private void getInfoBundle() {
-        bundle = getIntent().getExtras();
+        bundleRegistrationInfo = getIntent().getExtras();
     }
 
     private void initViews() {
         // Set default value
         txtSalary.setText(String.format(ckbValueTitle, 0));
+        setEndDollarTitle();
 
-        seekBarSalary.configSeekBar(100000, 100);
         seekBarSalary.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -70,34 +73,42 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
             }
         });
+    }
 
-
+    private void setEndDollarTitle() {
+        txtEndDollar.setText(getResources().getString(
+                R.string.seek_bar_end_value,
+                seekBarSalary.getRealMax()));
     }
 
     @OnClick(R.id.btn_done)
     public void onClickBtnDone() {
-        checkValidInput();
+        boolean isValidInput = checkValidInput();
+        if (isValidInput) {
+            Intent intent = new Intent(this, SignUpStep3Activity.class);
+            createInfoBundle();
+            intent.putExtras(bundleRegistrationInfo);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, getResources().getString(R.string.warning_select_sport),
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private void checkValidInput() {
+    private boolean checkValidInput() {
         for (CheckBox checkItem :
                 allChecksSport) {
             if (checkItem.isChecked()) {
-                Intent intent = new Intent(this, SignUpStep3Activity.class);
-                createInfoBundle();
-                intent.putExtras(bundle);
-                startActivity(intent);
-                return;
+                return true;
             }
         }
-        Toast.makeText(this, getResources().getString(R.string.warning_select_sport),
-                Toast.LENGTH_SHORT).show();
+        return false;
     }
 
     private void createInfoBundle() {
-        if (bundle == null) {
-            bundle = new Bundle();
+        if (bundleRegistrationInfo == null) {
+            bundleRegistrationInfo = new Bundle();
         }
-        bundle.putString("salary", String.valueOf(seekBarSalary.getProgress()));
+        bundleRegistrationInfo.putString("salary", String.valueOf(seekBarSalary.getProgress()));
     }
 }
