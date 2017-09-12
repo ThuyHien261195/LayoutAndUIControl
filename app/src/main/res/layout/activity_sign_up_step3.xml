@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
+        android:paddingLeft="@dimen/padding_horizontal_sign_up_confirm"
+        android:paddingRight="@dimen/padding_horizontal_sign_up_confirm"
         android:text="@string/asking_send_mail_title"
         android:textSize="@dimen/asking_send_mail_text_size" />
 

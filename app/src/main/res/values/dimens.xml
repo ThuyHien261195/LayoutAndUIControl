@@ -7,4 +7,5 @@
     <dimen name="spacing_seek_bar_title">10dp</dimen>
     <dimen name="margin_top_btn_next">30dp</dimen>
     <dimen name="asking_send_mail_text_size">30sp</dimen>
+    <dimen name="padding_horizontal_sign_up_confirm">20dp</dimen>
 </resources>
