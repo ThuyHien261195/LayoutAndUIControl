@@ -91,11 +91,6 @@ public class SignUpStep1Activity extends AppCompatActivity {
             Intent intent = new Intent(getBaseContext(), SignUpStep2Activity.class);
             intent.putExtras(createInfoBundle());
             startActivity(intent);
-        } else {
-            validateFirstName();
-            validateLastName();
-            validateEmail();
-            validatePhone();
         }
     }
 
@@ -116,17 +111,21 @@ public class SignUpStep1Activity extends AppCompatActivity {
     }
 
     public boolean checkValidInput() {
-        return validateFirstName() && validateLastName() &&
-                validateEmail() && validatePhone();
+        boolean isValidFirstName = validateFirstName();
+        boolean isValidLastName = validateLastName();
+        boolean isValidEmail = validateEmail();
+        boolean isValidPhone = validatePhone();
+        return isValidFirstName && isValidLastName &&
+                isValidEmail && isValidPhone;
 
     }
 
     private Bundle createInfoBundle() {
-        Bundle bundle = new Bundle();
-        bundle.putString("firstName", editFirstName.getText().toString());
-        bundle.putString("lastName", editLastName.getText().toString());
-        bundle.putString("email", editEmail.getText().toString());
-        bundle.putString("phoneNumber", editPhone.getText().toString());
-        return bundle;
+        Bundle bundleRegistrationInfo = new Bundle();
+        bundleRegistrationInfo.putString("firstName", editFirstName.getText().toString());
+        bundleRegistrationInfo.putString("lastName", editLastName.getText().toString());
+        bundleRegistrationInfo.putString("email", editEmail.getText().toString());
+        bundleRegistrationInfo.putString("phoneNumber", editPhone.getText().toString());
+        return bundleRegistrationInfo;
     }
 }

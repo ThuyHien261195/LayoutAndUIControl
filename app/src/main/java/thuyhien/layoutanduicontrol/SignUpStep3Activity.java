@@ -9,7 +9,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class SignUpStep3Activity extends AppCompatActivity {
-    Bundle bundle;
+    Bundle bundleRegisInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class SignUpStep3Activity extends AppCompatActivity {
     }
 
     public void getInfoBundle() {
-        bundle = getIntent().getExtras();
+        bundleRegisInfo = getIntent().getExtras();
     }
 
     @OnClick(R.id.btn_send_mail)
@@ -30,11 +30,10 @@ public class SignUpStep3Activity extends AppCompatActivity {
     }
 
     private void callEmailIntent() {
-        Intent intentSendMail = new Intent(Intent.ACTION_SEND);
+        Intent intentSendMail = new Intent(Intent.ACTION_SENDTO);
         intentSendMail.setData(Uri.parse("mailto:"));
-        intentSendMail.setType("message/rfc822");
-        if (bundle != null) {
-            intentSendMail.putExtra(Intent.EXTRA_EMAIL, new String[]{bundle.getString("email")});
+        if (bundleRegisInfo != null) {
+            intentSendMail.putExtra(Intent.EXTRA_EMAIL, new String[]{bundleRegisInfo.getString("email")});
             intentSendMail.putExtra(Intent.EXTRA_SUBJECT,
                     getResources().getString(R.string.sign_up_subject_mail));
             intentSendMail.putExtra(Intent.EXTRA_TEXT, createMailContent());
@@ -48,10 +47,10 @@ public class SignUpStep3Activity extends AppCompatActivity {
     }
 
     private String createMailContent() {
-        String content = bundle.getString("firstName") + "_" + bundle.getString("lastName") + "\n" +
-                bundle.getString("phoneNumber") + "\n" + bundle.getString("salary") + " " +
+        String mailContent = bundleRegisInfo.getString("firstName") + "_" + bundleRegisInfo.getString("lastName") + "\n" +
+                bundleRegisInfo.getString("phoneNumber") + "\n" + bundleRegisInfo.getString("salary") + " " +
                 getResources().getString(R.string.dollars_title);
-        return content;
+        return mailContent;
     }
 
     @OnClick(R.id.btn_restart)
