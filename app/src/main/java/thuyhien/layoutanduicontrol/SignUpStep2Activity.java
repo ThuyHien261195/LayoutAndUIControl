@@ -109,6 +109,6 @@ public class SignUpStep2Activity extends AppCompatActivity {
         if (bundleRegistrationInfo == null) {
             bundleRegistrationInfo = new Bundle();
         }
-        bundleRegistrationInfo.putString("salary", String.valueOf(seekBarSalary.getProgress()));
+        bundleRegistrationInfo.putString(ConstantKeyBundle.KEY_SALARY, String.valueOf(seekBarSalary.getProgress()));
     }
 }

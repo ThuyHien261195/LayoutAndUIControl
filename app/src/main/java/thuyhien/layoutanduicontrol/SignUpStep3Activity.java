@@ -36,7 +36,7 @@ public class SignUpStep3Activity extends AppCompatActivity {
         if (bundleRegisInfo != null) {
             intentSendMail.putExtra(
                     Intent.EXTRA_EMAIL,
-                    new String[]{bundleRegisInfo.getString("email")});
+                    new String[]{bundleRegisInfo.getString(ConstantKeyBundle.KEY_EMAIL)});
             intentSendMail.putExtra(Intent.EXTRA_SUBJECT,
                     getResources().getString(R.string.sign_up_mail_subject));
             intentSendMail.putExtra(Intent.EXTRA_TEXT, createMailContent());
@@ -50,10 +50,10 @@ public class SignUpStep3Activity extends AppCompatActivity {
     }
 
     private String createMailContent() {
-        String mailContent = bundleRegisInfo.getString("firstName") + "_"
-                + bundleRegisInfo.getString("lastName") + "\n"
-                + bundleRegisInfo.getString("phoneNumber") + "\n"
-                + bundleRegisInfo.getString("salary") + " " +
+        String mailContent = bundleRegisInfo.getString(ConstantKeyBundle.KEY_FIRST_NAME) + "_"
+                + bundleRegisInfo.getString(ConstantKeyBundle.KEY_LAST_NAME) + "\n"
+                + bundleRegisInfo.getString(ConstantKeyBundle.KEY_EMAIL) + "\n"
+                + bundleRegisInfo.getString(ConstantKeyBundle.KEY_SALARY) + " " +
                 getResources().getString(R.string.title_dollars);
         return mailContent;
     }
