@@ -52,7 +52,7 @@ public class SignUpStep3Activity extends AppCompatActivity {
     private String createMailContent() {
         String mailContent = bundleRegisInfo.getString(ConstantKeyBundle.KEY_FIRST_NAME) + "_"
                 + bundleRegisInfo.getString(ConstantKeyBundle.KEY_LAST_NAME) + "\n"
-                + bundleRegisInfo.getString(ConstantKeyBundle.KEY_EMAIL) + "\n"
+                + bundleRegisInfo.getString(ConstantKeyBundle.KEY_PHONE_NUMBER) + "\n"
                 + bundleRegisInfo.getString(ConstantKeyBundle.KEY_SALARY) + " " +
                 getResources().getString(R.string.title_dollars);
         return mailContent;
