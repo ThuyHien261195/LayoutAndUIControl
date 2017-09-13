@@ -35,10 +35,10 @@ public class SignUpStep3Activity extends AppCompatActivity {
         if (bundleRegisInfo != null) {
             intentSendMail.putExtra(Intent.EXTRA_EMAIL, new String[]{bundleRegisInfo.getString("email")});
             intentSendMail.putExtra(Intent.EXTRA_SUBJECT,
-                    getResources().getString(R.string.sign_up_subject_mail));
+                    getResources().getString(R.string.sign_up_mail_subject));
             intentSendMail.putExtra(Intent.EXTRA_TEXT, createMailContent());
         }
-        String title = getResources().getString(R.string.intent_chooser_title);
+        String title = getResources().getString(R.string.title_intent_chooser);
         Intent intentChooser = Intent.createChooser(intentSendMail, title);
 
         if (intentSendMail.resolveActivity(getPackageManager()) != null) {
@@ -49,7 +49,7 @@ public class SignUpStep3Activity extends AppCompatActivity {
     private String createMailContent() {
         String mailContent = bundleRegisInfo.getString("firstName") + "_" + bundleRegisInfo.getString("lastName") + "\n" +
                 bundleRegisInfo.getString("phoneNumber") + "\n" + bundleRegisInfo.getString("salary") + " " +
-                getResources().getString(R.string.dollars_title);
+                getResources().getString(R.string.title_dollars);
         return mailContent;
     }
 

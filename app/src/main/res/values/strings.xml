@@ -1,33 +1,41 @@
 <resources>
     <string name="app_name">Step 1</string>
-    <string name="label_activity_sign_up">Step 2</string>
+    <string name="title_activity_sign_up_step2">Step 2</string>
+    <string name="title_activity_sign_up_step3">Step 3</string>
+
+    <!-- Hint string -->
     <string name="hint_first_name">First name</string>
     <string name="hint_last_name">Last name</string>
     <string name="hint_email">Email</string>
     <string name="hint_phone_number">Phone number</string>
-    <string name="radio_male_title">Male</string>
-    <string name="radio_female_title">Female</string>
+
+    <!-- Title -->
+    <string name="title_radio_male">Male</string>
+    <string name="title_radio_female">Female</string>
+    <string name="title_seek_bar_value">Your salary: %1$d dollars</string>
+    <string name="title_seek_bar_start_value">$0</string>
+    <string name="title_seek_bar_end_value">$%1$d</string>
+    <string name="title_sport">Which sport do you like?</string>
+    <string name="title_ckb_football">Football</string>
+    <string name="title_clb_tennis">Tennis</string>
+    <string name="title_ckb_ping_pong">Ping pong</string>
+    <string name="title_ckb_swimming">Swimming</string>
+    <string name="title_ckb_volleyball">Volleyball</string>
+    <string name="title_ckb_basketball">Basketball</string>
+    <string name="sign_up_mail_subject">User\'s registration info</string>
+    <string name="title_dollars">dollars</string>
+    <string name="title_intent_chooser">Send mail:</string>
+
+    <!-- Action Button Title -->
     <string name="action_next">Next</string>
-    <string name="seek_bar_value_title">Your salary: %1$d dollars</string>
-    <string name="seek_bar_start_value">$0</string>
-    <string name="seek_bar_end_value">$%1$d</string>
-    <string name="sport_title">Which sport do you like?</string>
-    <string name="ckb_football_title">Football</string>
-    <string name="clb_tennis_title">Tennis</string>
-    <string name="ckb_ping_pong_title">Ping pong</string>
-    <string name="ckb_swimming_title">Swimming</string>
-    <string name="ckb_volleyball_title">Volleyball</string>
-    <string name="ckb_basketball_title">Basketball</string>
+    <string name="action_send_mail">Send mail</string>
+    <string name="action_restart">Restart</string>
     <string name="action_done">DONE</string>
+
+    <!-- Error message -->
     <string name="error_empty_field">You must enter %1$s</string>
     <string name="error_invalid_field">%1$s is invalid</string>
     <string name="warning_select_sport">Please select one sport at least</string>
-    <string name="asking_send_mail_title">Thank you for filling information.
+    <string name="asking_send_mail">Thank you for filling information.
         \n What do you want to do next?</string>
-    <string name="action_send_mail">Send mail</string>
-    <string name="action_restart">Restart</string>
-    <string name="sign_up_subject_mail">User\'s registration info</string>
-    <string name="dollars_title">dollars</string>
-    <string name="intent_chooser_title">Send mail:</string>
-    <string name="label_activity_sign_up_confirm">Step 3</string>
 </resources>

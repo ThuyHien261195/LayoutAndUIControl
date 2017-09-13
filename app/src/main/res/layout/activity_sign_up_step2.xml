@@ -15,7 +15,7 @@
         android:id="@+id/txt_salary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/seek_bar_value_title" />
+        android:text="@string/title_seek_bar_value" />
 
     <include layout="@layout/seekbar" />
 
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_vertical"
-        android:text="@string/sport_title" />
+        android:text="@string/title_sport" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -35,30 +35,30 @@
 
             <CheckBox
                 android:id="@+id/ckb_football"
-                android:text="@string/ckb_football_title" />
+                android:text="@string/title_ckb_football" />
 
             <CheckBox
                 android:id="@+id/ckb_tennis"
-                android:text="@string/clb_tennis_title" />
+                android:text="@string/title_clb_tennis" />
 
             <CheckBox
                 android:id="@+id/ckb_ping_pong"
-                android:text="@string/ckb_ping_pong_title" />
+                android:text="@string/title_ckb_ping_pong" />
         </TableRow>
 
         <TableRow android:layout_marginTop="@dimen/spacing_vertical">
 
             <CheckBox
                 android:id="@+id/ckb_swimming"
-                android:text="@string/ckb_swimming_title" />
+                android:text="@string/title_ckb_swimming" />
 
             <CheckBox
                 android:id="@+id/ckb_volleyball"
-                android:text="@string/ckb_volleyball_title" />
+                android:text="@string/title_ckb_volleyball" />
 
             <CheckBox
                 android:id="@+id/ckb_basketball"
-                android:text="@string/ckb_basketball_title" />
+                android:text="@string/title_ckb_basketball" />
         </TableRow>
     </TableLayout>
 

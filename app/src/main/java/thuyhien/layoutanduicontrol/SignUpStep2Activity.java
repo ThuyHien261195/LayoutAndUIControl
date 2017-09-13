@@ -31,7 +31,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
             R.id.ckb_swimming, R.id.ckb_volleyball, R.id.ckb_basketball})
     List<CheckBox> allChecksSport;
 
-    @BindString(R.string.seek_bar_value_title)
+    @BindString(R.string.title_seek_bar_value)
     String ckbValueTitle;
 
     Bundle bundleRegistrationInfo;
@@ -77,7 +77,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
     private void setEndDollarTitle() {
         txtEndDollar.setText(getResources().getString(
-                R.string.seek_bar_end_value,
+                R.string.title_seek_bar_end_value,
                 seekBarSalary.getRealMax()));
     }
 

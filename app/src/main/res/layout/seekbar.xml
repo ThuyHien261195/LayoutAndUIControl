@@ -22,7 +22,7 @@
             android:layout_marginLeft="@dimen/spacing_seek_bar_title"
             android:layout_marginTop="@dimen/spacing_seek_bar_title"
             android:layout_weight="1"
-            android:text="@string/seek_bar_start_value" />
+            android:text="@string/title_seek_bar_start_value" />
 
         <TextView
             android:id="@+id/txt_end_dollar"
@@ -30,6 +30,6 @@
             android:layout_height="match_parent"
             android:layout_marginRight="@dimen/spacing_seek_bar_title"
             android:layout_marginTop="@dimen/spacing_seek_bar_title"
-            android:text="@string/seek_bar_end_value" />
+            android:text="@string/title_seek_bar_end_value" />
     </LinearLayout>
 </merge>

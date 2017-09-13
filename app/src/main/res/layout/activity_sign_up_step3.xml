@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:paddingLeft="@dimen/padding_horizontal_sign_up_confirm"
         android:paddingRight="@dimen/padding_horizontal_sign_up_confirm"
-        android:text="@string/asking_send_mail_title"
+        android:text="@string/asking_send_mail"
         android:textSize="@dimen/asking_send_mail_text_size" />
 
     <Button

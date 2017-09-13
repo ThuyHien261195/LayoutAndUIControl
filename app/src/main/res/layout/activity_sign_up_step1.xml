@@ -61,13 +61,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/spacing_right_radio_btn"
-            android:text="@string/radio_male_title" />
+            android:text="@string/title_radio_male" />
 
         <android.support.v7.widget.AppCompatRadioButton
             android:id="@+id/option_female"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/radio_female_title" />
+            android:text="@string/title_radio_female" />
     </RadioGroup>
 
     <Button
