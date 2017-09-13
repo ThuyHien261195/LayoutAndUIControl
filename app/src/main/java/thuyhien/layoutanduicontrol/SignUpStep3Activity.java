@@ -24,7 +24,7 @@ public class SignUpStep3Activity extends AppCompatActivity {
         bundleRegisInfo = getIntent().getExtras();
     }
 
-    @OnClick(R.id.btn_send_mail)
+    @OnClick(R.id.button_send_mail)
     public void onBtnSendMailClick() {
         callEmailIntent();
     }
@@ -53,7 +53,7 @@ public class SignUpStep3Activity extends AppCompatActivity {
         return mailContent;
     }
 
-    @OnClick(R.id.btn_restart)
+    @OnClick(R.id.button_restart)
     public void onBtnRestartClick() {
         restartMainActivity();
     }

@@ -8,7 +8,7 @@
     tools:context="thuyhien.layoutanduicontrol.SignUpStep3Activity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_confirm_sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -18,12 +18,12 @@
         android:textSize="@dimen/asking_send_mail_text_size" />
 
     <Button
-        android:id="@+id/btn_send_mail"
+        android:id="@+id/button_send_mail"
         style="@style/CommonButtonTheme"
         android:text="@string/action_send_mail" />
 
     <Button
-        android:id="@+id/btn_restart"
+        android:id="@+id/button_restart"
         style="@style/CommonButtonTheme"
         android:text="@string/action_restart" />
 </LinearLayout>

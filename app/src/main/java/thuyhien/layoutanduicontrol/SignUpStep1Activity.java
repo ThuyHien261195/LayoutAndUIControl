@@ -85,7 +85,7 @@ public class SignUpStep1Activity extends AppCompatActivity {
         return true;
     }
 
-    @OnClick(R.id.btn_next)
+    @OnClick(R.id.button_next)
     public void onClickBtnNext() {
         if (checkValidInput()) {
             Intent intent = new Intent(getBaseContext(), SignUpStep2Activity.class);

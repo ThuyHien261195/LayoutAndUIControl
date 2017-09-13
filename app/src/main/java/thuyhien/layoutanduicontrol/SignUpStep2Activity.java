@@ -21,10 +21,10 @@ public class SignUpStep2Activity extends AppCompatActivity {
     @BindView(R.id.txt_salary)
     TextView txtSalary;
 
-    @BindView(R.id.txt_end_dollar)
+    @BindView(R.id.text_end_dollar)
     TextView txtEndDollar;
 
-    @BindView(R.id.seekBarSalary)
+    @BindView(R.id.seek_bar_salary)
     CustomSeekBar seekBarSalary;
 
     @BindViews({R.id.ckb_football, R.id.ckb_tennis, R.id.ckb_ping_pong,
@@ -81,7 +81,7 @@ public class SignUpStep2Activity extends AppCompatActivity {
                 seekBarSalary.getRealMax()));
     }
 
-    @OnClick(R.id.btn_done)
+    @OnClick(R.id.button_done)
     public void onClickBtnDone() {
         boolean isValidInput = checkValidInput();
         if (isValidInput) {

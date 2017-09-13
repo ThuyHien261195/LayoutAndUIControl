@@ -48,30 +48,30 @@
         android:inputType="phone" />
 
     <RadioGroup
-        android:id="@+id/radio_group"
+        android:id="@+id/radio_group_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_vertical"
-        android:checkedButton="@+id/option_female"
+        android:checkedButton="@+id/rb_option_female"
         android:gravity="center"
         android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatRadioButton
-            android:id="@+id/option_male"
+            android:id="@+id/rb_option_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/spacing_right_radio_btn"
             android:text="@string/title_radio_male" />
 
         <android.support.v7.widget.AppCompatRadioButton
-            android:id="@+id/option_female"
+            android:id="@+id/rb_option_female"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/title_radio_female" />
     </RadioGroup>
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/button_next"
         style="@style/CommonButtonTheme"
         android:layout_marginTop="@dimen/margin_top_btn_next"
         android:text="@string/action_next" />
