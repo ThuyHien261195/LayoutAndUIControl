@@ -10,18 +10,18 @@
     <string name="hint_phone_number">Phone number</string>
 
     <!-- Title -->
-    <string name="title_radio_male">Male</string>
-    <string name="title_radio_female">Female</string>
+    <string name="title_rb_male">Male</string>
+    <string name="title_rb_female">Female</string>
     <string name="title_seek_bar_value">Your salary: %1$d dollars</string>
     <string name="title_seek_bar_start_value">$0</string>
     <string name="title_seek_bar_end_value">$%1$d</string>
     <string name="title_sport">Which sport do you like?</string>
-    <string name="title_ckb_football">Football</string>
-    <string name="title_clb_tennis">Tennis</string>
-    <string name="title_ckb_ping_pong">Ping pong</string>
-    <string name="title_ckb_swimming">Swimming</string>
-    <string name="title_ckb_volleyball">Volleyball</string>
-    <string name="title_ckb_basketball">Basketball</string>
+    <string name="title_chk_football">Football</string>
+    <string name="title_chk_tennis">Tennis</string>
+    <string name="title_chk_ping_pong">Ping pong</string>
+    <string name="title_chk_swimming">Swimming</string>
+    <string name="title_chk_volleyball">Volleyball</string>
+    <string name="title_chk_basketball">Basketball</string>
     <string name="sign_up_mail_subject">User\'s registration info</string>
     <string name="title_dollars">dollars</string>
     <string name="title_intent_chooser">Send mail:</string>

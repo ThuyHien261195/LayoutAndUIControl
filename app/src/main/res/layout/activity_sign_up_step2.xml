@@ -34,31 +34,31 @@
         <TableRow>
 
             <CheckBox
-                android:id="@+id/ckb_football"
-                android:text="@string/title_ckb_football" />
+                android:id="@+id/chk_football"
+                android:text="@string/title_chk_football" />
 
             <CheckBox
-                android:id="@+id/ckb_tennis"
-                android:text="@string/title_clb_tennis" />
+                android:id="@+id/chk_tennis"
+                android:text="@string/title_chk_tennis" />
 
             <CheckBox
-                android:id="@+id/ckb_ping_pong"
-                android:text="@string/title_ckb_ping_pong" />
+                android:id="@+id/chk_ping_pong"
+                android:text="@string/title_chk_ping_pong" />
         </TableRow>
 
         <TableRow android:layout_marginTop="@dimen/spacing_vertical">
 
             <CheckBox
-                android:id="@+id/ckb_swimming"
-                android:text="@string/title_ckb_swimming" />
+                android:id="@+id/chk_swimming"
+                android:text="@string/title_chk_swimming" />
 
             <CheckBox
-                android:id="@+id/ckb_volleyball"
-                android:text="@string/title_ckb_volleyball" />
+                android:id="@+id/chk_volleyball"
+                android:text="@string/title_chk_volleyball" />
 
             <CheckBox
-                android:id="@+id/ckb_basketball"
-                android:text="@string/title_ckb_basketball" />
+                android:id="@+id/chk_basketball"
+                android:text="@string/title_chk_basketball" />
         </TableRow>
     </TableLayout>
 
