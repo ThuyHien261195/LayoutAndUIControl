@@ -121,10 +121,10 @@ public class SignUpStep1Activity extends AppCompatActivity {
 
     private Bundle createInfoBundle() {
         Bundle bundleRegistrationInfo = new Bundle();
-        bundleRegistrationInfo.putString(ConstantKeyBundle.KEY_FIRST_NAME, editFirstName.getText().toString());
-        bundleRegistrationInfo.putString(ConstantKeyBundle.KEY_LAST_NAME, editLastName.getText().toString());
-        bundleRegistrationInfo.putString(ConstantKeyBundle.KEY_EMAIL, editEmail.getText().toString());
-        bundleRegistrationInfo.putString(ConstantKeyBundle.KEY_PHONE_NUMBER, editPhone.getText().toString());
+        bundleRegistrationInfo.putString(ConstantKeyBundle.BUNDLE_FIRST_NAME, editFirstName.getText().toString());
+        bundleRegistrationInfo.putString(ConstantKeyBundle.BUNDLE_LAST_NAME, editLastName.getText().toString());
+        bundleRegistrationInfo.putString(ConstantKeyBundle.BUNDLE_EMAIL, editEmail.getText().toString());
+        bundleRegistrationInfo.putString(ConstantKeyBundle.BUNDLE_PHONE_NUMBER, editPhone.getText().toString());
         return bundleRegistrationInfo;
     }
 }
