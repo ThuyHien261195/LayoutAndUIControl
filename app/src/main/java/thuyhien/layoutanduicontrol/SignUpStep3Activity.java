@@ -20,20 +20,23 @@ public class SignUpStep3Activity extends AppCompatActivity {
         getInfoBundle();
     }
 
-    public void getInfoBundle() {
-        bundleRegisInfo = getIntent().getExtras();
-    }
-
     @OnClick(R.id.button_send_mail)
     public void onBtnSendMailClick() {
         callEmailIntent();
+    }
+
+    @OnClick(R.id.button_restart)
+    public void onBtnRestartClick() {
+        restartMainActivity();
     }
 
     private void callEmailIntent() {
         Intent intentSendMail = new Intent(Intent.ACTION_SENDTO);
         intentSendMail.setData(Uri.parse("mailto:"));
         if (bundleRegisInfo != null) {
-            intentSendMail.putExtra(Intent.EXTRA_EMAIL, new String[]{bundleRegisInfo.getString("email")});
+            intentSendMail.putExtra(
+                    Intent.EXTRA_EMAIL,
+                    new String[]{bundleRegisInfo.getString("email")});
             intentSendMail.putExtra(Intent.EXTRA_SUBJECT,
                     getResources().getString(R.string.sign_up_mail_subject));
             intentSendMail.putExtra(Intent.EXTRA_TEXT, createMailContent());
@@ -47,15 +50,16 @@ public class SignUpStep3Activity extends AppCompatActivity {
     }
 
     private String createMailContent() {
-        String mailContent = bundleRegisInfo.getString("firstName") + "_" + bundleRegisInfo.getString("lastName") + "\n" +
-                bundleRegisInfo.getString("phoneNumber") + "\n" + bundleRegisInfo.getString("salary") + " " +
+        String mailContent = bundleRegisInfo.getString("firstName") + "_"
+                + bundleRegisInfo.getString("lastName") + "\n"
+                + bundleRegisInfo.getString("phoneNumber") + "\n"
+                + bundleRegisInfo.getString("salary") + " " +
                 getResources().getString(R.string.title_dollars);
         return mailContent;
     }
 
-    @OnClick(R.id.button_restart)
-    public void onBtnRestartClick() {
-        restartMainActivity();
+    private void getInfoBundle() {
+        bundleRegisInfo = getIntent().getExtras();
     }
 
     private void restartMainActivity() {

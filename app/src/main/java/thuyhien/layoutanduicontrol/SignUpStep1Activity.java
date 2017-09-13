@@ -44,7 +44,6 @@ public class SignUpStep1Activity extends AppCompatActivity {
     @BindString(R.string.hint_phone_number)
     String hintPhoneNumber;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +73,15 @@ public class SignUpStep1Activity extends AppCompatActivity {
         validatePhone();
     }
 
+    @OnClick(R.id.button_next)
+    public void onClickBtnNext() {
+        if (checkValidInput()) {
+            Intent intent = new Intent(getBaseContext(), SignUpStep2Activity.class);
+            intent.putExtras(createInfoBundle());
+            startActivity(intent);
+        }
+    }
+
     private boolean validatePhone() {
         if (TextUtils.isEmpty(editPhone.getText())) {
             editPhone.setError(String.format(errorEmptyField, hintPhoneNumber));
@@ -85,13 +93,14 @@ public class SignUpStep1Activity extends AppCompatActivity {
         return true;
     }
 
-    @OnClick(R.id.button_next)
-    public void onClickBtnNext() {
-        if (checkValidInput()) {
-            Intent intent = new Intent(getBaseContext(), SignUpStep2Activity.class);
-            intent.putExtras(createInfoBundle());
-            startActivity(intent);
-        }
+    private boolean checkValidInput() {
+        boolean isValidFirstName = validateFirstName();
+        boolean isValidLastName = validateLastName();
+        boolean isValidEmail = validateEmail();
+        boolean isValidPhone = validatePhone();
+        return isValidFirstName && isValidLastName &&
+                isValidEmail && isValidPhone;
+
     }
 
     private boolean validateFirstName() {
@@ -108,16 +117,6 @@ public class SignUpStep1Activity extends AppCompatActivity {
             return false;
         }
         return true;
-    }
-
-    public boolean checkValidInput() {
-        boolean isValidFirstName = validateFirstName();
-        boolean isValidLastName = validateLastName();
-        boolean isValidEmail = validateEmail();
-        boolean isValidPhone = validatePhone();
-        return isValidFirstName && isValidLastName &&
-                isValidEmail && isValidPhone;
-
     }
 
     private Bundle createInfoBundle() {

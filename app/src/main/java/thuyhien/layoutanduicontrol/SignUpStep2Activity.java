@@ -27,8 +27,8 @@ public class SignUpStep2Activity extends AppCompatActivity {
     @BindView(R.id.seek_bar_salary)
     CustomSeekBar seekBarSalary;
 
-    @BindViews({R.id.ckb_football, R.id.ckb_tennis, R.id.ckb_ping_pong,
-            R.id.ckb_swimming, R.id.ckb_volleyball, R.id.ckb_basketball})
+    @BindViews({R.id.chk_football, R.id.chk_tennis, R.id.chk_ping_pong,
+            R.id.chk_swimming, R.id.chk_volleyball, R.id.chk_basketball})
     List<CheckBox> allChecksSport;
 
     @BindString(R.string.title_seek_bar_value)
@@ -45,6 +45,20 @@ public class SignUpStep2Activity extends AppCompatActivity {
 
         getInfoBundle();
         initViews();
+    }
+
+    @OnClick(R.id.button_done)
+    public void onClickBtnDone() {
+        boolean isValidInput = checkValidInput();
+        if (isValidInput) {
+            Intent intent = new Intent(this, SignUpStep3Activity.class);
+            createInfoBundle();
+            intent.putExtras(bundleRegistrationInfo);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, getResources().getString(R.string.warning_select_sport),
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void getInfoBundle() {
@@ -79,20 +93,6 @@ public class SignUpStep2Activity extends AppCompatActivity {
         txtEndDollar.setText(getResources().getString(
                 R.string.title_seek_bar_end_value,
                 seekBarSalary.getRealMax()));
-    }
-
-    @OnClick(R.id.button_done)
-    public void onClickBtnDone() {
-        boolean isValidInput = checkValidInput();
-        if (isValidInput) {
-            Intent intent = new Intent(this, SignUpStep3Activity.class);
-            createInfoBundle();
-            intent.putExtras(bundleRegistrationInfo);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, getResources().getString(R.string.warning_select_sport),
-                    Toast.LENGTH_SHORT).show();
-        }
     }
 
     private boolean checkValidInput() {

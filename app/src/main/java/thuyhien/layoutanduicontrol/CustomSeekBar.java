@@ -45,10 +45,6 @@ public class CustomSeekBar extends AppCompatSeekBar {
         setMax(realMax);
     }
 
-    public int getRealMax() {
-        return super.getMax() * stepValue;
-    }
-
     @Override
     public synchronized int getProgress() {
         return super.getProgress() * stepValue;
@@ -65,5 +61,9 @@ public class CustomSeekBar extends AppCompatSeekBar {
             stepValue = 1;
         }
         super.setMax(max / stepValue);
+    }
+
+    public int getRealMax() {
+        return super.getMax() * stepValue;
     }
 }
